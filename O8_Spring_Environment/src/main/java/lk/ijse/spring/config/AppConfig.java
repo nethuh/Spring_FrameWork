@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.spring.pojo")
 @PropertySource("classpath:resource.properties")
+@PropertySource("classpath:application.properties")
 public class AppConfig {
     public AppConfig(){
         System.out.println("AppConfig Instantiated");
