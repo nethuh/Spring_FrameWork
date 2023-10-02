@@ -1,5 +1,7 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomerDTO;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +20,13 @@ public class B_X_WWW_Url_Encoded_Controller {
     //How to access above type data from spring
     //@Model Attribute
 
-    @PostMapping
-    public String receiveDataWithFormData(String id, String name,String address) {
+    @PostMapping("/a")
+    public String receiveDataWithFormData1(String id, String name,String address) {
         return "X-WWW-Form-URL-Encoded-Data : "+id+""+name+""+address;
+    }
+
+    @PostMapping
+    public String receiveDataWithFormData2(@ModelAttribute CustomerDTO dto) {
+        return "X-WWW-Form-URL-Encoded-Data : "+dto.toString();
     }
 }
