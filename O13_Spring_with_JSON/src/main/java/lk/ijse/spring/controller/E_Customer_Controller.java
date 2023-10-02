@@ -19,25 +19,29 @@ public class E_Customer_Controller {
     //return
     @PostMapping
     public ResponseUtil addCustomer(@RequestBody CustomerDTO dto) {
-return new ResponseUtil("OK","Succesfully Added",dto);
-    }
+        if (dto.getCusID().equals("C001"))throw new RuntimeException("This is a bad customer");
+        return new ResponseUtil("OK","Successfully Added",dto);
+
+}
 
     @DeleteMapping(params = "id")
     public ResponseUtil deleteCustomer(@RequestParam String id) {
+        if (id.endsWith("C001"))throw new RuntimeException("This customer cannot deleted.!");
         return new ResponseUtil("Ok", "Successfully Delete", id);
     }
 
 
     @PutMapping
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto) {
-        return new ResponseUtil("OK","Succesfully Updated",dto);
+        if (dto.getCusID().equals("C001"))throw new RuntimeException("This is a bad Customer, So you can't update this customer.");
+        return new ResponseUtil("OK","Successfully Updated",dto);
 
     }
 
     @GetMapping(params = "id")
     public ResponseUtil searchCustomer(@RequestParam String id) {
         CustomerDTO customer =new CustomerDTO("C002","Tharin","Matara",1000,null);
-        return new ResponseUtil("OK","Succesfully Added",customer);
+        return new ResponseUtil("OK","Successfully Added",customer);
 
     }
 
@@ -49,6 +53,6 @@ return new ResponseUtil("OK","Succesfully Added",dto);
         allCustomers.add(new CustomerDTO("C002","Kamal","Mathara",2000,null));
         allCustomers.add(new CustomerDTO("C003","Iman","Panadura",4000,null));
         allCustomers.add(new CustomerDTO("C004","Ushan","Colombo",5000,null));
-        return new ResponseUtil("OK","Succesfully Loaded",allCustomers);
+        return new ResponseUtil("OK","Successfully Loaded",allCustomers);
     }
 }

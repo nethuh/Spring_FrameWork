@@ -6,6 +6,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = {"lk.ijse.spring.controller","lk.ijse.spring.advisor"})
+@ComponentScan(basePackages = "lk.ijse.spring.controller")
 public class WebAppConfig {
+    public WebAppConfig(){
+        System.out.println("WebAppConfig:Web App Instantiated");
+    }
 }

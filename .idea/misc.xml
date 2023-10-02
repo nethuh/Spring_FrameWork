@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/O11_REST_Controllers/pom.xml" />
         <option value="$PROJECT_DIR$/O12_Mapping_Spec/pom.xml" />
         <option value="$PROJECT_DIR$/O13_Spring_with_JSON/pom.xml" />
+        <option value="$PROJECT_DIR$/O14_Spring_Data_JPA/pom.xml" />
       </list>
     </option>
   </component>

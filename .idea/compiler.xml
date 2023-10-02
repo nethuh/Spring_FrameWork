@@ -17,6 +17,7 @@
         <module name="O9_Spring_Web_MVC" />
         <module name="O8_Spring_Environment" />
         <module name="O11_REST_Controllers" />
+        <module name="O14_Spring_Data_JPA" />
         <module name="O10_Controllers" />
         <module name="O2_Bean_Scopes" />
         <module name="O6_Spring_Configurations" />
