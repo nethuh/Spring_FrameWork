@@ -5,12 +5,14 @@ import lk.ijse.spring.repo.ItemRepo;
 import lk.ijse.spring.entity.Item;
 import lk.ijse.spring.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/item")
+@CrossOrigin
 public class ItemController {
     @Autowired
     ItemService service;

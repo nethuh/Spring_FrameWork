@@ -23,5 +23,8 @@
         <module name="O6_Spring_Configurations" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="O16_POS_Front_End" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
