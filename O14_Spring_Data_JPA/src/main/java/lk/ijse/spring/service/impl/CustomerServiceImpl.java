@@ -47,11 +47,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO findCustomer(String id) {
-        return null;
+        Customer customer = customerRepo.findById(id).get();
+        return mapper.map(customer,CustomerDTO.class);
     }
 
     @Override
     public void updateCustomer(CustomerDTO c) {
-
+        Customer map = mapper.map(c, Customer.class);
+        customerRepo.save(map);
     }
 }
