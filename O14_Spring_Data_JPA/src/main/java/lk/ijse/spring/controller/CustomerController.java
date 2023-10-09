@@ -1,6 +1,6 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.repo.CustomerDAO;
+import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,31 +11,30 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    @Autowired
-    CustomerDAO customerDAO;
+
 
     @PostMapping
     public void addCustomer(Customer dto){
-        customerDAO.save(dto);
+        customerRepo.save(dto);
     }
 
     @DeleteMapping(params = {"id"})
     public void deleteCustomer(String id){
-        customerDAO.deleteById(id);
+        customerRepo.deleteById(id);
     }
 
     @GetMapping
     public List<Customer> getAllCustomer(){
-        return customerDAO.findAll();
+        return customerRepo.findAll();
     }
 
     @GetMapping(params = {"id"})
     public Customer findCustomer(String id){
-        return customerDAO.findById(id).get();
+        return customerRepo.findById(id).get();
     }
 
     @PutMapping
     public void updateCustomer(@RequestBody Customer c){
-        customerDAO.save(c);
+        customerRepo.save(c);
     }
 }
